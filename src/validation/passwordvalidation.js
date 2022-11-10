@@ -23,6 +23,15 @@ export function checkPasswordValidity(value) {
     if (!isValidLength.test(value)) {
         return 'Password must be 8-16 Characters Long.';
     }
-
     return null;
+}
+
+export const emailValidation = (email) => {
+    let re = /\S+@\S+\.\S+/;
+    let regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+    if (re.test(email) || regex.test(email)) {
+        return null
+    } else {
+        return 'please add valid email'
+    }
 }
